@@ -116,7 +116,6 @@ public class Test01 {
 
     public static void list(String s) {
         System.out.println("ooo" + s + "xxx");
-        System.out.println("hello");
     }
     ////////////////////////////////////////////////////////////////////////////
 
