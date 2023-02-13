@@ -8,10 +8,14 @@ public class Human1 {
     public int weight;
     
     public void eat(int x) {
-        System.out.println("Eat " + x + " bowls");
+        System.out.println("eat " + x + " bowls");
     }
     
     public void run(int x) {
         System.out.println("Run " + x + " kms");
+    }
+    @Override
+    public String toString() {
+        return  name + " " + height + " " + weight;
     }
 }
