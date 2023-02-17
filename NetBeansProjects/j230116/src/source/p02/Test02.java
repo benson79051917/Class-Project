@@ -1,6 +1,7 @@
 package source.p02;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import source.p01.Human1;
 
 public class Test02 {
@@ -290,6 +291,19 @@ public class Test02 {
         System.out.print("Enter String:");
         s = sc.nextLine();
         System.out.println("----------> s =" + s);
+    }
+    
+    public static void callporg8() {
+        String msg;
+        //msg = JOptionPane.showInputDialog(null, "message");
+        msg = JOptionPane.showInputDialog(null, "message","title bar", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "message input : " + msg, "title bar", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public static void callporg9() {
+        int msg;
+        msg = Integer.parseInt(JOptionPane.showInputDialog(null, "message","title bar", JOptionPane.ERROR_MESSAGE));
+        JOptionPane.showMessageDialog(null, "message input : " + msg, "title bar", JOptionPane.ERROR_MESSAGE);
     }
 
 }

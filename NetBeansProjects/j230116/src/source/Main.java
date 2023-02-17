@@ -31,7 +31,9 @@ public class Main {
         //Test02.參考轉參考_不同類型要有繼承關係();
         //Test02.參考轉參考_不同類型要有繼承關係1();
         //Test02.scanner1();
-        Test02.scanner2();
+        //Test02.scanner2();
+        //Test02.callporg8();
+        Test02.callporg9();
     }
     
 }
