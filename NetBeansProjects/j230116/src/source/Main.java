@@ -2,6 +2,7 @@ package source;
 
 import source.p01.Test01;
 import source.p02.Test02;
+import source.p03.Test03;
 
 public class Main {
 
@@ -33,7 +34,16 @@ public class Main {
         //Test02.scanner1();
         //Test02.scanner2();
         //Test02.callporg8();
-        Test02.callporg9();
+        //Test02.callporg9();
+        ////////////////////////////////////////////////////////////////////////
+        //Test03.callporg1();
+        //Test03.換錢1();
+        //Test03.換錢11();
+        //Test03.input();
+        //Test03.callporg3();
+        //Test03.callporg4();
+        Test03.遞增遞減運算子5();
+
     }
     
 }
