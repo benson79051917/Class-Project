@@ -3,6 +3,7 @@ package source;
 import source.p01.Test01;
 import source.p02.Test02;
 import source.p03.Test03;
+import source.p04.Test04;
 
 public class Main {
 
@@ -42,8 +43,23 @@ public class Main {
         //Test03.input();
         //Test03.callporg3();
         //Test03.callporg4();
-        Test03.遞增遞減運算子5();
-
+        //Test03.遞增遞減運算子5();
+        //Test03.寫檔案();
+        //Test03.讀檔案();
+        //Test03.寫檔案_99();
+        //Test03.讀檔案_99();
+        //Test03.break1();
+        //Test03.break2();
+        //Test03.continue1();
+        //Test03.input_loop_check();
+        //Test03.switch分數等級_loop();
+        //System.out.println(Test03.firstWeekDayOfYear(2023));
+        //Test03.輸入帳號密碼2();
+        //Test03.j0390();
+        //Test03.亂數();
+        Test03.grade();
+        ////////////////////////////////////////////////////////////////////////
+        Test04.一維基本型態陣列宣告();
     }
     
 }
