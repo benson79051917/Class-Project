@@ -300,6 +300,46 @@ public class Test04 {
     }
 
     public static void random1() {
+        int[][] ar1 = new int[100][6];
+        
+        //產生亂數不重複陣列：
+        for (int i = 0; i < ar1.length; i++) {
+            for (int j = 0; j < ar1[i].length; j++) {
+                ar1[i][j] = (int) (Math.random() * 42) + 1;
+                for (int k = 0; k < j; k++) {
+                    if (ar1[i][j] == ar1[i][k]) {
+                        j--;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        //泡沫排序：
+        for(int i = 0 ; i <ar1.length; i++) {
+            for(int j = 0; j < ar1[i].length - 1; j++) {
+                for(int k = j+1; k < ar1[i].length; k++) {
+                    if(ar1[i][j] > ar1[i][k]) {
+                        int tmp = ar1[i][j];
+                        ar1[i][j] = ar1[i][k];
+                        ar1[i][k] = tmp;
+                    }
+                }
+            }
+        }
+        
+        //印出答案：
+        for (int i = 0; i < ar1.length; i++) {
+            System.out.print((i + 1) + "\t->\t");
+            for (int j = 0; j < ar1[i].length; j++) {
+                System.out.print(ar1[i][j] + "\t");
+            }
+            System.out.println("");
+        }
+
+
+
+        /*
         int[][] ar1 = new int[100][7];
         for (int i = 0; i < ar1.length; i++) {
             System.out.print((i + 1) + "\t->\t");
@@ -325,8 +365,9 @@ public class Test04 {
             }
             System.out.println("");
         }
+        */
     }
-    
+
     public static void 找陣列中的字串() {
         Scanner s = new Scanner(System.in);
         String input;
@@ -341,20 +382,20 @@ public class Test04 {
         }
 
     }
-    
+
     public static void 找陣列中的字串_陣列() {
         Scanner s = new Scanner(System.in);
         String input;
-        String[] ar1= {"23", "25","26","27","28","43"};
+        String[] ar1 = {"23", "25", "26", "27", "28", "43"};
         boolean ok = false;
         System.out.print("Imang : ");
         input = s.next();
-        
-        for(int i = 0; i <ar1.length; i++) {
-            if(input.equals(ar1[i])) {
+
+        for (int i = 0; i < ar1.length; i++) {
+            if (input.equals(ar1[i])) {
                 ok = true;
                 break;
-            }       
+            }
         }
 
         if (ok) {
@@ -364,15 +405,15 @@ public class Test04 {
         }
 
     }
-    
+
     public static void 找陣列中的字串_副程式() {
         Scanner s = new Scanner(System.in);
         String input;
-        
+
         boolean ok = false;
         System.out.print("Imang : ");
         input = s.next();
-        
+
         if (found(input)) {
             System.out.println("Data Correct!");
         } else {
@@ -380,14 +421,14 @@ public class Test04 {
         }
 
     }
-    
+
     private static boolean found(String input) {
-        
-        String[] ar1= {"23", "25","26","27","28","43"};
-        for(int i = 0; i <ar1.length; i++) {
-            if(input.equals(ar1[i])) {
+
+        String[] ar1 = {"23", "25", "26", "27", "28", "43"};
+        for (int i = 0; i < ar1.length; i++) {
+            if (input.equals(ar1[i])) {
                 return true;
-            }       
+            }
         }
         return false;
     }
