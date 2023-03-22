@@ -1,5 +1,6 @@
 package source.p05;
 
+import java.util.Date;
 import source.p05.pack1.Import1;
 //import static source.p05.pack1.Import4.x;
 //import static source.p05.pack1.Import4.s1;
@@ -188,4 +189,98 @@ public class Test05 {
         Person2.iloveyou();
         
     }
+    
+    public static void 由類別產生物件4() {
+        Person4 p1 = new Person4();
+        p1.name = "aaa";
+        p1.height = 183;
+        p1.weight = 80;
+        p1.head.eye = "blue";
+        p1.head.nose = "big";
+        p1.head.mouth = "long";
+        //p1.showdata();
+        System.out.print(p1);
+        Person4.say.iloveyou();
+        Person4.say.ihateyou();
+    }
+    
+    public static void 物件的內容() {
+
+        Person2 p1 = new Person2("賴玉珊", 162, 50);   //自訂類別     
+        int[] ar1 = new int[5]; //陣列
+
+        StringBuffer str1 = new StringBuffer("abc");  //StringBuffer
+        StringBuilder str2 = new StringBuilder("xyz"); //StringBuilder
+        Integer num1 = 123;  //八個包裝類別
+        Double num2 = 456.78;
+        Date d1 = new Date(); //日期
+        System.out.println("人1=" + p1);
+        System.out.println("ar1=" + ar1);
+        System.out.println("str1=" + str1);
+        System.out.println("str2=" + str2);
+        System.out.println("num1=" + num1);
+        System.out.println("num2=" + num2);
+        System.out.println("d1=" + d1);
+    }
+    
+    public static void 繼承1() {
+        Plane a1 = new Plane();
+        a1.起飛();
+        Airplane a2 = new Airplane();
+        a2.起飛();
+        Aircraft a3 = new Aircraft();
+        a3.超光速飛行();
+        a3.起飛();
+    }
+    
+    public static void 繼承2() {
+        Plane a1 = new Plane();
+        a1.起飛();
+        Plane a2 = new Airplane();
+        a2.起飛();
+        Plane a3 = new Aircraft();
+        
+        a3.起飛();
+        ((Aircraft)a3).超光速飛行();
+        
+    }
+    
+    public static void 繼承3() {
+        Plane a1;
+        a1 = new Plane();
+        a1.起飛();
+        a1 = new Airplane();
+        a1.起飛();
+        a1 = new Aircraft();
+        a1.起飛();
+    }
+    
+    public static void 繼承4() {
+        Plane [] ar1 = {new Plane(), new Airplane(), new Aircraft()};
+        for(Plane a: ar1) {
+            a.起飛();
+        }
+    }
+    
+    public static void instance的關係1() {
+        Dog5 p = new Dog5();
+        System.out.println("p instancof Dog5 = " + (p instanceof Dog5));
+        System.out.println("p instancof Animal5 = " + (p instanceof Animal5));
+        //System.out.println("p instancof Cat5 = " + (p instanceof Cat5));
+    }
+    
+    public static void instance的關係2() {
+        //Animal1 是父類別 , Dog1 是子類別
+        Dog5 p = new Dog5();
+        呼叫instance的關係(p);
+    }
+
+    //Compiler 時 會認為 p 是 Object 的型態 與 Cat5 有繼承關係
+    //run 時才會挖出 p 真正的內容是 Dog5     
+    public static void 呼叫instance的關係(Object p) {
+        System.out.println("p instanceof Dog5 =" + (p instanceof Dog5));  //兒子 - true
+        System.out.println("p instanceof Animal5 =" + (p instanceof Animal5));  //父親 - true        
+        System.out.println("p instanceof Cat5 =" + (p instanceof Cat5)); //不相關 -false
+    }
+    
 }

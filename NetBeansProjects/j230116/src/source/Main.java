@@ -4,6 +4,7 @@ import source.p01.Test01;
 import source.p02.Test02;
 import source.p03.Test03;
 import source.p04.Test04;
+import source.p05.Test05;
 
 public class Main {
 
@@ -74,10 +75,18 @@ public class Main {
         //Test04.快捷迴圈();
         //Test04.陣列的比較();
         //Test04.泡沫排序法();
-        Test04.random1();
+        //Test04.random1();
         //Test04.找陣列中的字串();
         //Test04.找陣列中的字串_陣列();
         //Test04.找陣列中的字串_副程式();
+        ////////////////////////////////////////////////////////////////////////
+        
+        //Test05.由類別產生物件4();
+        //Test05.物件的內容();
+        //Test05.繼承1();
+        //Test05.繼承2();
+        //Test05.繼承3();
+        //Test05.繼承4();
         ////////////////////////////////////////////////////////////////////////
         
     }

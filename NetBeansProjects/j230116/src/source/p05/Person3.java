@@ -4,17 +4,20 @@ package source.p05;
 //    
 //}
 public class Person3 {
-    
+
     public String name;
     public int height;
     public int weight;
     public static int num;
-    
+    public String eye;
+    public String nose;
+    public String mouth;
+
     public Person3() {
         super();
         num++;
     }
-    
+
     public Person3(String n, int h, int w) {
         super();
         name = n;
@@ -22,11 +25,15 @@ public class Person3 {
         weight = w;
         num++;
     }
-    
+
     public static void iloveyou() {
         System.out.println("i love you");
     }
-    
+
+    public static void ihateyou() {
+        System.out.println("我恨你");
+    }
+
     public void showdata() {
         System.out.println("name = " + name);
         System.out.println("height = " + height);
@@ -34,4 +41,5 @@ public class Person3 {
         System.out.println("num = " + num);
     }
     
+
 }
