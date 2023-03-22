@@ -300,46 +300,6 @@ public class Test04 {
     }
 
     public static void random1() {
-        int[][] ar1 = new int[100][6];
-        
-        //產生亂數不重複陣列：
-        for (int i = 0; i < ar1.length; i++) {
-            for (int j = 0; j < ar1[i].length; j++) {
-                ar1[i][j] = (int) (Math.random() * 42) + 1;
-                for (int k = 0; k < j; k++) {
-                    if (ar1[i][j] == ar1[i][k]) {
-                        j--;
-                        break;
-                    }
-                }
-            }
-        }
-        
-        //泡沫排序：
-        for(int i = 0 ; i <ar1.length; i++) {
-            for(int j = 0; j < ar1[i].length - 1; j++) {
-                for(int k = j+1; k < ar1[i].length; k++) {
-                    if(ar1[i][j] > ar1[i][k]) {
-                        int tmp = ar1[i][j];
-                        ar1[i][j] = ar1[i][k];
-                        ar1[i][k] = tmp;
-                    }
-                }
-            }
-        }
-        
-        //印出答案：
-        for (int i = 0; i < ar1.length; i++) {
-            System.out.print((i + 1) + "\t->\t");
-            for (int j = 0; j < ar1[i].length; j++) {
-                System.out.print(ar1[i][j] + "\t");
-            }
-            System.out.println("");
-        }
-
-
-
-        /*
         int[][] ar1 = new int[100][7];
         for (int i = 0; i < ar1.length; i++) {
             System.out.print((i + 1) + "\t->\t");
@@ -365,7 +325,6 @@ public class Test04 {
             }
             System.out.println("");
         }
-        */
     }
 
     public static void 找陣列中的字串() {
@@ -433,4 +392,161 @@ public class Test04 {
         return false;
     }
 
+    public static void 字串長度() {
+        String str1 = "我是 fish!";
+        StringBuffer str2 = new StringBuffer("我是 fish!");
+        StringBuilder str3 = new StringBuilder("我是 fish!");
+        //無論中、英文或空白，每個都是 1 個字元 
+        System.out.println("str1 字串長度 = " + str1.length());
+        System.out.println("str2 字串長度 = " + str2.length());
+        System.out.println("str3 字串長度 = " + str3.length());
+    }
+
+    public static void 取出子字串() {
+        String str1 = "abcdef";
+        String stra = str1.substring(2);
+        String strb = str1.substring(2, 5);
+        System.out.println("stra 字串 = " + stra);
+        System.out.println("strb 字串 = " + strb);
+    }
+
+    public static void String產生方式() {
+        //每次必要空間
+        String a1 = new String("fish");
+        String a2 = new String("fish");
+        String a3 = new String("fish");
+
+        //先搜尋 String Pool
+        String b1 = "fish";
+        String b2 = "fish";
+        String b3 = "fish";
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2))); //true
+
+        System.out.println("(b1==b2) ==> " + (b1 == b2)); //true  虛
+        System.out.println("(b1.equal(b2) ==> " + (b1.equals(b2))); //true
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    //自訂類別因沒覆寫 Object 類別的 equals 方法 , 因此全部都是 用 == 在比  
+    public static void equals用法11() {
+        StringDemo1 a1 = new StringDemo1();
+        StringDemo1 a2 = new StringDemo1();
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //false
+    }
+
+    public static void equals用法12() {
+        StringDemo2 a1 = new StringDemo2();
+        StringDemo2 a2 = new StringDemo2();
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //true
+    }
+
+//String有覆寫    
+    public static void equals用法21() {
+        String a1 = new String("fish");
+        String a2 = new String("fish");
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //true
+    }
+
+    //StringBuffer沒有覆寫
+    public static void equals用法31() {
+        StringBuffer a1 = new StringBuffer("fish");
+        StringBuffer a2 = new StringBuffer("fish");
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //false
+    }
+
+    //StringBuilder沒有覆寫
+    public static void equals用法32() {
+        StringBuilder a1 = new StringBuilder("fish");
+        StringBuilder a2 = new StringBuilder("fish");
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //false
+    }
+
+//八個包裝類別有覆寫
+    public static void equals用法41() {
+        Integer a1 = 4;
+        Integer a2 = 4;
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //true
+    }
+
+    public static void equals用法42() {
+        Long a1 = 4l;
+        Long a2 = 4l;
+
+        System.out.println("(a1==a2) ==> " + (a1 == a2));  //false
+        System.out.println("(a1.equal(a2) ==> " + (a1.equals(a2)));  //true
+    }
+
+//////////////////////////////////////////////////////////////////////////////
+    public static void 兩物件比較() {
+
+        StringDemo1 a = new StringDemo1();
+        StringDemo1 b = new StringDemo1();
+        StringDemo2 c = new StringDemo2();
+
+        System.out.println("(a==b) ==> " + (a == b));  //false
+        //system.out.println("(a==c) ==> " + (a == c));
+
+        System.out.println("(a.equals(b)) ==> " + a.equals(b));  //同型態 false
+        System.out.println("(a.equals(c)) ==> " + a.equals(c));  //false
+    }
+    //////////////////////////////////////////////////////////////////////////////
+
+    public static void 字串的運算1() {
+        String ss = "賴玉珊";
+        ss.concat("我愛你");
+        System.out.println(ss); //賴玉珊
+        ///////////////////////////////////////
+        ss = ss.concat("我愛你");  //要重新指派
+        System.out.println(ss); //賴玉珊我愛你
+    }
+
+    public static void 字串的運算2() {
+        StringBuffer ss = new StringBuffer("賴玉珊");
+        ss.append("我愛你");
+        System.out.println(ss); //賴玉珊我愛你
+    }
+
+    public static void 字串的運算3() {  //5.0
+        StringBuilder ss = new StringBuilder("賴玉珊");
+        ss.append("我愛你");
+        System.out.println(ss); //賴玉珊我愛你
+    }
+
+    public static void 字串的運算4() {
+        String ss = "";
+        for (int i = 1; i <= 10; i++) {
+            ss = ss.concat(i + " ");
+        }
+        System.out.println(ss);
+    }
+
+    public static void 字串的運算5() {
+        StringBuffer ss = new StringBuffer("");
+        for (int i = 1; i <= 10; i++) {
+            ss.append(i).append(" ");
+        }
+        System.out.println(ss);
+    }
+
+    public static void 字串的運算6() {
+        StringBuilder ss = new StringBuilder("");
+        for (int i = 1; i <= 10; i++) {
+            ss.append(i).append(" ");
+        }
+        System.out.println(ss);
+    }
 }
