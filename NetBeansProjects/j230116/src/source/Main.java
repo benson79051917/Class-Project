@@ -5,6 +5,8 @@ import source.p02.Test02;
 import source.p03.Test03;
 import source.p04.Test04;
 import source.p05.Test05;
+import source.p06.Test06;
+import source.p07.Test07;
 
 public class Main {
 
@@ -89,6 +91,15 @@ public class Main {
         //Test05.繼承4();
         ////////////////////////////////////////////////////////////////////////
         
+        //Test06.使用Account1();
+        //Test06.使用Account2();
+        ////////////////////////////////////////////////////////////////////////
+        
+        //Test07.加1_傳值();
+        //Test07.加1_傳址();
+        //Test07.傳址_多型2();
+        //Test07.傳址_多型3();
+        Test07.回傳2_址();
     }
     
 }
